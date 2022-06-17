@@ -1,6 +1,5 @@
 let choices = ["rock", "paper", "scissors"];
-//let computerSelection = choices[Math.floor(Math.random() * choices.length)];
-let computerSelection = "rock"
+let computerSelection = choices[Math.floor(Math.random() * choices.length)];
 let rounds = 5;
 let score = [0, 0];
 let playerSelection = '';
