@@ -1,15 +1,14 @@
 let choices = ["rock", "paper", "scissors"];
-let computerSelection = choices[Math.floor(Math.random() * choices.length)];
 let rounds = 5;
 let score = [0, 0];
 let playerSelection = '';
-
+let computerSelection = '';
 
 function playerSelectionPrompt() {
     //Set the value of the player's selection
     if (playerSelection = prompt('Lets Play Rock, Paper or Scissors. Choose your item.     The score is You: ' + score[0] + ' ' + 'Computer: ' + score[1])) {
         playerSelection = playerSelection.toLowerCase();
-        console.log(playerSelection);
+
         //Compare is the input given are correct
         if (playerSelection != 'rock' && playerSelection != 'paper' && playerSelection != 'scissors') {
             if (confirm('Wrong Input.  You can only choose between: Rock, Paper or Scissors. Do you want to try again?')) {
@@ -27,20 +26,21 @@ function playerSelectionPrompt() {
 }
 
 function playRound() {
+    computerSelection = choices[Math.floor(Math.random() * choices.length)];
     if (score[0] == rounds - 1) {
         if (confirm('You won the game! do you want to play again?')) {
             resetGame();
         } else {
-           goodBye()
+            goodBye()
         }
 
-    } else if(score[1] == rounds - 1){
+    } else if (score[1] == rounds - 1) {
         if (confirm('The Computer won the game! do you want to play again?')) {
             resetGame();
         } else {
-           goodBye()
+            goodBye()
         }
-    } 
+    }
     else {
         if (playerSelection === computerSelection) {
             alert("You have tied");
@@ -73,3 +73,6 @@ function resetGame() {
     score = [0, 0];
     playerSelectionPrompt()
 }
+
+console.log(playerSelection);
+console.log(computerElection);
